@@ -1,7 +1,7 @@
 ﻿var app = angular.module("VisitsRecord", []);
 
 app.controller("myCtrl", function ($scope, $http) {
-    $http.get(".../attachment/VisitsRecord.php").then(function (response) {
+    $http.get("https://rachyliu.github.io/attachment/VisitsRecord.php").then(function (response) {
         $scope.myVisits = response.data.records;
         console.log(response.data.records);
     });
