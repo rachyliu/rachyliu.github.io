@@ -12,34 +12,32 @@
 
 </head>
 <body>
-    <div class="text-center " ng-app="VisitsRecord" ng-controller="myCtrl">
-        <div>
+    <div id="VisitsRecordApp" hidden>
+        <div class="text-center" ng-app="VisitsRecord" ng-controller="myCtrl">
             <h1>Hello {{saveInput.name}}!</h1>
 
             <p>
                 Please let me know your name: <input type="text" ng-model="saveInput.name"> and you are a
-                <select ng-model="saveInput.type" ng-options="x.type for x in type"></select>
+                <select ng-model="saveInput.type" ng-options="x for x in type"></select>
             </p>
 
             <h4>Thank you for visiting! </h4>
-            <p style="white-space: pre;">{{message[saveInput.type.message]}}</p>
+            <p style="white-space: pre;">{{message[saveInput.type]}}</p>
             <button ng-click="saveVisit()">Let's Go</button><a ng-click="saveVisit()"><span class="RL-SmallText"> Or continue as guest.</span></a>
         </div>
+        <img id="RL-StartLook" src="images/StartPageLook.jpg" />
     </div>
-    <div class="row">
-        <div class="col-md-6">
 
-        </div>
-
-        <div class="col-md-6">
-            <img is="RL-StartLook" src="images/StartPageLook.jpg" />
-            <div hidden>
-                <iframe class="RL-Webs" src="CMUportfolio.html"></iframe>
-            </div>
-        </div>
+            
+    <div id="CMUportfolioBlock" hidden>
+                
     </div>
+
+    
+    
     <!-- jQuery library -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+   
 
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
