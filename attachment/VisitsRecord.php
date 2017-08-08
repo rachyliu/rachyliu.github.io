@@ -1,0 +1,1 @@
+{ "records":[ {"name":"Alfreds Futterkiste","type":"Berlin","date":"Germany"}, {"name":"Ana Trujillo Emparedados y helados","type":"México D.F.","date":"Mexico"} ] }
