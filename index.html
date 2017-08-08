@@ -14,15 +14,15 @@
 <body>
     <div class="text-center " ng-app="VisitsRecord" ng-controller="myCtrl">
         <div>
-            <h1>Hello {{name}}!</h1>
+            <h1>Hello {{saveInput.name}}!</h1>
 
             <p>
-                Please let me know your name: <input type="text" ng-model="name"> and you are a
-                <select ng-model="selectedType" ng-options="x.type for x in type"></select>
+                Please let me know your name: <input type="text" ng-model="saveInput.name"> and you are a
+                <select ng-model="saveInput.type" ng-options="x.type for x in type"></select>
             </p>
 
             <h4>Thank you for visiting! </h4>
-            <p style="white-space: pre;">{{selectedType.message}}</p>
+            <p style="white-space: pre;">{{message[saveInput.type.message]}}</p>
             <button ng-click="saveVisit()">Let's Go</button><a ng-click="saveVisit()"><span class="RL-SmallText"> Or continue as guest.</span></a>
         </div>
     </div>

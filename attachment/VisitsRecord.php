@@ -1,1 +1,17 @@
-{ "records":[ {"name":"Alfreds Futterkiste","type":"Berlin","date":"Germany"}, {"name":"Ana Trujillo Emparedados y helados","type":"México D.F.","date":"Mexico"} ] }
+<?php 
+
+$postdata = file_get_contents("php://input");
+$request = json_decode($postdata);
+
+$name = $request->name;
+
+echo $name;
+
+/* $file="VisitsRecord.json"; 
+
+$json = json_decode(file_get_contents($file),TRUE); 
+
+$json['records'][] = array('name'=>'Superman', 'pid'=>4);
+
+file_put_contents( 'VisitsRecord.json', json_encode( $json ) ); */
+?>
