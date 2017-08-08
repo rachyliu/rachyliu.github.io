@@ -14,17 +14,34 @@
 <body>
     <div id="VisitsRecordApp" hidden>
         <div class="text-center" ng-app="VisitsRecord" ng-controller="myCtrl">
-            <h1>Hello {{saveInput.name}}!</h1>
+            <div class="row">
+                <div class="col-md-6" style="margin-top:30vh;">
+                    <h1>Hello {{saveInput.name}}!</h1>
 
-            <p>
-                Please let me know your name: <input type="text" ng-model="saveInput.name"> and you are a
-                <select ng-model="saveInput.type" ng-options="x for x in type"></select>
-            </p>
+                    <p>
+                        Please let me know your name: <input type="text" ng-model="saveInput.name"> and you are a
+                        <select ng-model="saveInput.type" ng-options="x for x in type"></select>
+                    </p>
 
-            <h4>Thank you for visiting! </h4>
-            <p style="white-space: pre;">{{message[saveInput.type]}}</p>
-            <button ng-click="saveVisit()">Let's Go</button><a ng-click="saveVisit()"><span class="RL-SmallText"> Or continue as guest.</span></a>
-        </div>
+                    <h4>Thank you for visiting! </h4>
+                    <p style="white-space: pre;">{{message[saveInput.type]}}</p>
+                    <button ng-click="saveVisit()">Let's Go</button><a ng-click="saveVisit()"><span class="RL-SmallText"> Or continue as guest.</span></a>
+                </div>
+                <div class="col-md-4">
+                    <table class="table table-striped">
+                        <tr>
+                            <th class="text-center">Name</th>
+                            <th class="text-center">City</th>
+                            <th class="text-center">Country</th>
+                        </tr>
+                        <tr ng-repeat="visitor in myVisits">
+                            <td>{{ visitor.name }}</td>
+                            <td>{{ visitor.type }}</td>
+                            <td>{{ visitor.date }}</td>
+                        </tr>
+                    </table>
+                </div>
+            </div></div>
         <img id="RL-StartLook" src="images/StartPageLook.jpg" />
     </div>
 

@@ -8,7 +8,7 @@ app.controller("myCtrl", function ($scope, $http) {
     //    $scope.myVisits = response.data.records;
     //    console.log(response.data.records);
     //});
-    $http.get("../attachment/RecordExample.php").then(function (response) {
+    $http.get("https://rachyliu.github.io/attachment/RecordExample.php").then(function (response) {
         console.log(response);
         $scope.myVisits = response.data.records;
         console.log(response.data.records);
@@ -25,11 +25,14 @@ app.controller("myCtrl", function ($scope, $http) {
         type: "None",
         date: new Date().getTime()
     };
-    $scope.saveVisit = function () {
+    $scope.keepVisit = function () {
         console.log($scope.saveInput);
         $("#VisitsRecordApp").hide();
         $("#CMUportfolioBlock").html('<iframe class="RL-Webs" src="CMUportfolio.html"></iframe>').show();
         //$http.post('../attachment/VisitsRecord.php', $scope.saveInput).then(onSaveVisitSuccess, onSaveVisitError);
+    }
+    $scope.saveVisit = function () {
+        $scope.myVisits.push($scope.saveInput);
     }
 });
 
