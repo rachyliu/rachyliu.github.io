@@ -23,14 +23,7 @@ app.controller("myCtrl", function ($scope, $http) {
     };
     $scope.saveVisit = function () {
         console.log($scope.saveInput);
-        $http({
-            method: 'POST',
-            url: '../attachment/VisitsRecord.php',
-            headers: {
-                'Content-Type': 'application/json', /*or whatever type is relevant */                
-            },
-            data: $scope.saveInput
-        }).then(onSaveVisitSuccess, onSaveVisitError);
+        $http.post('../attachment/VisitsRecord.php', $scope.saveInput).then(onSaveVisitSuccess, onSaveVisitError);
     }
 });
 
