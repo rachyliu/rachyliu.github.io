@@ -30,7 +30,7 @@
                         Your visit will <strong>not</strong> be saved at this time.<br />
                         You can still see how your information can be added into the list on right.
                     </p>
-                    <input type="submit" class="btn btn-default" ng-click="saveVisit()" ng-disabled="recordFrom.name.$pristine || recordFrom.type.$pristine" value="Add Me" />
+                    <input type="submit" class="btn btn-default" ng-click="saveVisit()" ng-disabled="recordFrom.name.$pristine || recordFrom.type.$pristine ||recordFrom.$invalid " value="Add Me" />
                     <a ng-click="keepVisit()"><span class="RL-SmallText"> Or continue view my site.</span></a>
                 </form>
 
