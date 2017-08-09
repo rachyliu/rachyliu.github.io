@@ -32,7 +32,8 @@ app.controller("myCtrl", function ($scope, $http) {
         //$http.post('../attachment/VisitsRecord.php', $scope.saveInput).then(onSaveVisitSuccess, onSaveVisitError);
     }
     $scope.saveVisit = function () {
-        $scope.myVisits.push($scope.saveInput);
+        console.log($scope.saveInput);
+        $scope.myVisits.push(angular.copy($scope.saveInput));
     }
 });
 

@@ -23,6 +23,32 @@ select{
     width:auto;
     border: 1px solid #CACACA;
 }
+
+input:focus,
+select:focus{
+    outline-color:#B2DFDB;
+}
+button{
+    margin-right:10px;
+}
+.btn-default:hover{
+    background-color:#4DB6AC;
+    border-color: #fff;
+    color:#fff;
+}
+
+.table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th{
+    border:none;
+}
+
+.table-striped>tbody>tr#TableHearder{
+    background-color:#4DB6AC;
+    color:#fff;
+}
+
+.table-striped>tbody>tr:nth-of-type(odd){
+    background-color: #E0F2F1;
+}
 .RL-Webs{
     /*display:inline-block;
     padding:40px;
@@ -45,5 +71,42 @@ select{
     right:0;
     bottom:0;
     z-index:-1;
+}
+
+.RL-TitlenSearch{
+    width:100%;
+    margin-top:10vh;
+    height:45px;
+}
+
+.RL-TitlenSearch h4{
+    left:15px;
+    position: absolute;
+}
+
+.RL-TitlenSearch input{
+    right:15px;
+    position: absolute;
+}
+
+.RL-TitlenSearch input:focus{
+    
+    outline-width: 0px;
+}
+
+.RL-Search{
+    width:26px;
+    height:26px;
+    margin-top:3px;
+    position:absolute;
+    right:200px;
+}
+
+.RL-Search path{
+    fill:#BDBDBD;
+}
+
+.RL-TitlenSearch input.ng-not-empty ~ svg path{
+    fill:#009688;
 }
 

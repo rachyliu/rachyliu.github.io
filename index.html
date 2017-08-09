@@ -16,45 +16,56 @@
         <div class="text-center" ng-app="VisitsRecord" ng-controller="myCtrl">
             <div class="row">
                 <div class="col-md-6" style="margin-top:30vh;">
-                    <h1>Hello {{saveInput.name}}!</h1>
+                    <h1>Hello <span style="color:#00796B;">{{saveInput.name}}</span>!</h1>
 
                     <p>
-                        Please let me know your name: <input type="text" ng-model="saveInput.name"> and you are a
+                        Please let me know your name: <input type="text" ng-model="saveInput.name"> <br />and you are a
                         <select ng-model="saveInput.type" ng-options="x for x in type"></select>
                     </p>
 
                     <h4>Thank you for visiting! </h4>
-                    <p style="white-space: pre;">{{message[saveInput.type]}}</p>
-                    <button ng-click="saveVisit()">Let's Go</button><a ng-click="saveVisit()"><span class="RL-SmallText"> Or continue as guest.</span></a>
+                    <p style="white-space: pre;color:#009688;">{{message[saveInput.type]}}</p>
+                    <button class="btn btn-default" ng-click="saveVisit()">Let's Go</button>
+                    <a ng-click="saveVisit()"><span class="RL-SmallText"> Or continue as guest.</span></a>
                 </div>
+
                 <div class="col-md-4">
+                    <div class="RL-TitlenSearch">
+                        <h4>Vistors:</h4>
+                        <input type="text" ng-model="search" />
+                        <svg class="RL-Search" viewBox="0 0 24 24">
+                            <path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" />
+                        </svg>
+
+                    </div>
                     <table class="table table-striped">
-                        <tr>
+                        <tr id="TableHearder">
                             <th class="text-center">Name</th>
-                            <th class="text-center">City</th>
-                            <th class="text-center">Country</th>
+                            <th class="text-center">Type</th>
+                            <th class="text-center">Date</th>
                         </tr>
-                        <tr ng-repeat="visitor in myVisits">
+                        <tr ng-repeat="visitor in myVisits|filter:search track by $index">
                             <td>{{ visitor.name }}</td>
                             <td>{{ visitor.type }}</td>
-                            <td>{{ visitor.date }}</td>
+                            <td>{{ visitor.date| date:"MM/dd/yyyy 'at' h:mma" }}</td>
                         </tr>
                     </table>
                 </div>
-            </div></div>
+            </div>
+        </div>
         <img id="RL-StartLook" src="images/StartPageLook.jpg" />
     </div>
 
-            
+
     <div id="CMUportfolioBlock" hidden>
-                
+
     </div>
 
-    
-    
+
+
     <!-- jQuery library -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-   
+
 
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
