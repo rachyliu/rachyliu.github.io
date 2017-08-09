@@ -38,18 +38,20 @@
                         </svg>
 
                     </div>
-                    <table class="table table-striped">
-                        <tr id="TableHearder">
-                            <th class="text-center">Name</th>
-                            <th class="text-center">Type</th>
-                            <th class="text-center">Date</th>
-                        </tr>
-                        <tr ng-repeat="visitor in myVisits|filter:search track by $index">
-                            <td>{{ visitor.name }}</td>
-                            <td>{{ visitor.type }}</td>
-                            <td>{{ visitor.date| date:"MM/dd/yyyy 'at' h:mma" }}</td>
-                        </tr>
-                    </table>
+                    <div id="RL-Vtable">
+                        <table class="table table-striped">
+                            <tr id="TableHearder">
+                                <th class="text-center">Name</th>
+                                <th class="text-center">Type</th>
+                                <th class="text-center">Date</th>
+                            </tr>
+                            <tr ng-repeat="visitor in myVisits|filter:search track by $index">
+                                <td>{{ visitor.name }}</td>
+                                <td>{{ visitor.type }}</td>
+                                <td>{{ visitor.date| date:"MM/dd/yyyy 'at' h:mma" }}</td>
+                            </tr>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>

@@ -110,3 +110,7 @@ button{
     fill:#009688;
 }
 
+#RL-Vtable{
+    max-height:calc(80vh - 45px);
+    overflow-y: auto;
+}

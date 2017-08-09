@@ -8,7 +8,7 @@ app.controller("myCtrl", function ($scope, $http) {
     //    $scope.myVisits = response.data.records;
     //    console.log(response.data.records);
     //});
-    $http.get("https://rachyliu.github.io/attachment/RecordExample.php").then(function (response) {
+    $http.get("../attachment/RecordExample.php").then(function (response) {
         console.log(response);
         $scope.myVisits = response.data.records;
         console.log(response.data.records);
