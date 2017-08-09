@@ -31,10 +31,18 @@ select:focus{
 button{
     margin-right:10px;
 }
+
+.btn-default{
+    padding-right:22px;
+}
 .btn-default:hover{
     background-color:#4DB6AC;
     border-color: #fff;
     color:#fff;
+}
+
+.btn-default:disabled:hover{
+    color: #000;
 }
 
 .table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th{
@@ -45,7 +53,9 @@ button{
     background-color:#4DB6AC;
     color:#fff;
 }
-
+.table-striped>tbody>tr:nth-of-type(even){
+    background-color: #fff;
+}
 .table-striped>tbody>tr:nth-of-type(odd){
     background-color: #E0F2F1;
 }
@@ -60,9 +70,15 @@ button{
     height:100vh;
 }
 .RL-SmallText{
-    font-size:10px;
+    font-size:12px;
     cursor:pointer;
+    color:#00796B;
 }
+
+a:hover{
+    text-decoration:none;
+}
+
 #VisitsRecordApp{
     width:auto;
 }
@@ -71,6 +87,10 @@ button{
     right:0;
     bottom:0;
     z-index:-1;
+}
+.RL-WarningText{
+    font-size:14px;
+    color:#FF9800;
 }
 
 .RL-TitlenSearch{

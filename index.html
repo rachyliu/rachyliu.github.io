@@ -15,19 +15,24 @@
     <div id="VisitsRecordApp" hidden>
         <div class="text-center" ng-app="VisitsRecord" ng-controller="myCtrl">
             <div class="row">
-                <div class="col-md-6" style="margin-top:30vh;">
-                    <h1>Hello <span style="color:#00796B;">{{saveInput.name}}</span>!</h1>
-
+                <form name="recordFrom" class="col-md-6" style="margin-top:30vh;">
+                    <h1 ng-show="recordFrom.name.$dirty">Hello <span style="color:#00796B;">{{saveInput.name}}</span>!</h1>
+                    <h1 ng-show="recordFrom.name.$pristine">Hi There!</h1>
                     <p>
-                        Please let me know your name: <input type="text" ng-model="saveInput.name"> <br />and you are a
-                        <select ng-model="saveInput.type" ng-options="x for x in type"></select>
+                        Please let me know your name: <input type="text" name="name" ng-model="saveInput.name" required> <br />and you are a
+                        <select name="type" ng-model="saveInput.type" ng-options="x for x in type" required></select>
                     </p>
 
                     <h4>Thank you for visiting! </h4>
                     <p style="white-space: pre;color:#009688;">{{message[saveInput.type]}}</p>
-                    <button class="btn btn-default" ng-click="saveVisit()">Let's Go</button>
-                    <a ng-click="saveVisit()"><span class="RL-SmallText"> Or continue as guest.</span></a>
-                </div>
+                    <p class="RL-WarningText">
+                        As Github web hosting do not suport PHP, or any other arbitrary code. <br />
+                        Your visit will <strong>not</strong> be saved at this time.<br />
+                        You can still see how your information can be added into the list on right.
+                    </p>
+                    <input type="submit" class="btn btn-default" ng-click="saveVisit()" ng-disabled="recordFrom.name.$pristine || recordFrom.type.$pristine" value="Add Me" />
+                    <a ng-click="saveVisit()"><span class="RL-SmallText"> Or continue view my site.</span></a>
+                </form>
 
                 <div class="col-md-4">
                     <div class="RL-TitlenSearch">
@@ -41,11 +46,11 @@
                     <div id="RL-Vtable">
                         <table class="table table-striped">
                             <tr id="TableHearder">
-                                <th class="text-center">Name</th>
-                                <th class="text-center">Type</th>
-                                <th class="text-center">Date</th>
+                                <th class="text-center" ng-click="orderByMe('name')">Name</th>
+                                <th class="text-center" ng-click="orderByMe('type')">Type</th>
+                                <th class="text-center" ng-click="orderByMe('-date')">Date</th>
                             </tr>
-                            <tr ng-repeat="visitor in myVisits|filter:search track by $index">
+                            <tr ng-repeat="visitor in myVisits|filter:search | orderBy:myOrder track by $index">
                                 <td>{{ visitor.name }}</td>
                                 <td>{{ visitor.type }}</td>
                                 <td>{{ visitor.date| date:"MM/dd/yyyy 'at' h:mma" }}</td>

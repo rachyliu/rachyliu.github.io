@@ -8,20 +8,18 @@ app.controller("myCtrl", function ($scope, $http) {
     //    $scope.myVisits = response.data.records;
     //    console.log(response.data.records);
     //});
-    $http.get("../attachment/RecordExample.php").then(function (response) {
-        console.log(response);
+    $http.get("https://rachyliu.github.io/attachment/RecordExample.php").then(function (response) {
         $scope.myVisits = response.data.records;
-        console.log(response.data.records);
     });
     $scope.message = {
-        "Recruiter or Hiring Manager":"This is an app made using AngularJS. \n I also used HTML5, CSS, JavaScript, jQuery and Bootstrap.\n Images are drawn using PhotoShop and Illustrator.",
+        "Recruiter or Hiring Manager": "This is an app made using AngularJS. \n I also used HTML5, CSS, JavaScript, jQuery and Bootstrap.\n Images are drawn using PhotoShop and Illustrator.",
         "Friend":"This is an App recording visits. Please help by filling these fields :)",
         "Random Person":"I am Ruiqing (Rachel) Liu. This is my Website. \n You are going to see my Front-End and Art works here."
     };
 
     $scope.type = ["Recruiter or Hiring Manager","Friend", "Random Person"];
     $scope.saveInput = {
-        name: "Guest",
+        name: "",
         type: "None",
         date: new Date().getTime()
     };
@@ -35,7 +33,11 @@ app.controller("myCtrl", function ($scope, $http) {
         console.log($scope.saveInput);
         $scope.myVisits.push(angular.copy($scope.saveInput));
     }
+    $scope.orderByMe = function (x) {
+        $scope.myOrder = x;
+    }
 });
+
 
 function onSaveVisitSuccess(arg) {
     console.log(arg);
