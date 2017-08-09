@@ -46,9 +46,9 @@
                     <div id="RL-Vtable">
                         <table class="table table-striped">
                             <tr id="TableHearder">
-                                <th class="text-center" ng-click="orderByMe('name')">Name</th>
-                                <th class="text-center" ng-click="orderByMe('type')">Type</th>
-                                <th class="text-center" ng-click="orderByMe('-date')">Date</th>
+                                <th class="text-center RL-clickable" ng-click="orderByMe('name')">Name</th>
+                                <th class="text-center RL-clickable" ng-click="orderByMe('type')">Type</th>
+                                <th class="text-center RL-clickable" ng-click="orderByMe('-date')">Date</th>
                             </tr>
                             <tr ng-repeat="visitor in myVisits|filter:search | orderBy:myOrder track by $index">
                                 <td>{{ visitor.name }}</td>
@@ -60,7 +60,7 @@
                 </div>
             </div>
         </div>
-        <img id="RL-StartLook" src="images/StartPageLook.jpg" />
+        <img id="RL-StartLook" src="images/StartPageLook.png" />
     </div>
 
 
