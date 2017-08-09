@@ -9,7 +9,7 @@
             Goto = Goto.replace('#', '');
         }
         if (Goto==="Resume") {
-            location.replace("https://rachyliu.github.io/attachment/Resume.pdf");
+            location.replace("../attachment/Resume.pdf");
         }
         else if (Goto === "Site") {
             $("#VisitsRecordApp").hide();
