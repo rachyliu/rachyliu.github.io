@@ -24,7 +24,6 @@ app.controller("myCtrl", function ($scope, $http) {
         date: new Date().getTime()
     };
     $scope.keepVisit = function () {
-        console.log($scope.saveInput);
         $("#VisitsRecordApp").hide();
         $("#CMUportfolioBlock").html('<iframe class="RL-Webs" src="CMUportfolio.html"></iframe>').show();
         //$http.post('../attachment/VisitsRecord.php', $scope.saveInput).then(onSaveVisitSuccess, onSaveVisitError);
