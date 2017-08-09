@@ -1,4 +1,25 @@
-﻿$("#VisitsRecordApp").show("fast");
+﻿$(window).bind("load", function () {
+    if (window.location.href.indexOf('?') > 0) {
+        var endIdx;
+
+        endIdx = window.location.href.length;
+
+        var Goto = window.location.href.slice(window.location.href.indexOf('?') + 1, endIdx);
+        if (Goto.indexOf('#') > -1) {
+            Goto = Goto.replace('#', '');
+        }
+        if (Goto==="Resume") {
+            location.replace("https://rachyliu.github.io/attachment/Resume.pdf");
+        }
+        else if (Goto === "Site") {
+            $("#VisitsRecordApp").hide();
+            $("#CMUportfolioBlock").html('<iframe class="RL-Webs" src="CMUportfolio.html"></iframe>').show();
+        }
+    }
+    
+});
+
+$("#VisitsRecordApp").show("fast");
 
 var app = angular.module("VisitsRecord", []);
 
